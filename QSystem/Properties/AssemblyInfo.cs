@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息是通过以下项进行控制的
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("QSystem")]
+[assembly: AssemblyTitle("Qystem")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("QSystem")]
-[assembly: AssemblyCopyright("版权所有(C)  2018")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("Qystem")]
+[assembly: AssemblyCopyright("版权所有(C) Microsoft 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于 typelib 的 ID
-[assembly: Guid("a2658265-fe6a-498b-8520-26852b37d626")]
+[assembly: Guid("881a2f56-dee1-4b0b-8dd3-3240adae0478")]
 
 // 程序集的版本信息由下列四个值组成:
 //

@@ -6,10 +6,11 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace QSystem
+namespace Qystem
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        //App_Start的方法调用，加载启动文件
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();

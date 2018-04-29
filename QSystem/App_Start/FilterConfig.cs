@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace QSystem
+namespace Qystem
 {
     public class FilterConfig
     {

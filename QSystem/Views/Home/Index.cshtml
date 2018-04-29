@@ -1,31 +1,1301 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    @*<meta name="keywords" content="1 元试用解决方案, 网站建设, Web 应用, MySQL 数据库, MySQL on Azure, 存储" />
+        <meta name="description" content="利用1 元试用中提供的 1,500 元 Azure 服务使用额度，您可以针对不同的网站类型和需求，快速搭建一个带有 MySQL 数据库或者 SQL 数据库的网站。MySQL 数据库与网站应用的组合，可适用于常见的开源LAMP（Linux+  Apache + MySQL + PHP）架构， 而SQL 数据库与网站应用的组合则可适用于基于 .NET 平台的网站架构 : ASP.NET, ASP.NET MVC 系列。" />*@
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    <title>小型网站建设解决方案|Azure </title>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.azure.cn/Static/Favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="https://www.azure.cn/Static/Favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://www.azure.cn/Static/Favicon/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="https://www.azure.cn/Static/Favicon/manifest.json">
+    <link rel="mask-icon" href="https://www.azure.cn/Static/Favicon/safari-pinned-tab.svg" color="#00a3d9">
+    <meta name="msapplication-config" content="https://www.azure.cn/Static/Favicon/browserconfig.xml">
+    <!--<link href="http://www.51xuediannao.com/js/jquery/jquery_tanchu/styles/core.css" type="text/css" rel="stylesheet"/>-->
+    <meta name="theme-color" content="#ffffff">
+    <script type="appl">
+    </script>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <!-- BEGIN: Azure UI Style -->
+    <link href="https://www.azure.cn/Static/CSS/azureui.min.css?v=ae9a31c" rel="stylesheet">
+    <!-- END: Azure UI Style -->
+    <!-- BEGIN: Page Style -->
+    <link href="https://www.azure.cn/Static/CSS/common.min.css?v=ae9a31c" rel="stylesheet">
+    <!-- END: Page Style -->
+    <script type="text/javascript" src="~/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="~/js/popup_layer.js"></script>
+    <!-- BEGIN: Minified Page Style -->
+    <link href='https://www.azure.cn/Static/CSS/c38c583fcef0c5a47bb2e5ca7bdaeaf75141d4ce.css' rel='stylesheet' />
+    <!-- END: Minified Page Style -->
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-responsive.min.css" rel="stylesheet" />
+
+
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+
+    <link href="~/css/adminia.css" rel="stylesheet" />
+    <link href="~/css/adminia-responsive.css" rel="stylesheet" />
+
+    <link href="~/css/pages/dashboard.css" rel="stylesheet" />
+
+
+    <style type="text/css">
+        body, ul, li, div, h1, h2 {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .clr {
+            clear: both;
+            overflow: hidden;
+            height: 0;
+        }
+
+        a.closeBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: block;
+            width: 60px;
+            padding: 4px 0;
+            text-align: center;
+            background: #fff;
+            border: 1px solid #85B6E2;
+            color: #333;
+        }
+
+            a.closeBtn:hover {
+                color: #fff;
+                border: 1px solid #85B6E2;
+                background: #85B6E2;
+            }
+
+        body {
+            padding: 10px 20px 200px;
+        }
+
+        h1 {
+            color: #85B6E2;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .example {
+            border: 1px dashed #ccc;
+            padding: 40px;
+            margin-top: 10px;
+            zoom: 1;
+        }
+
+            .example .description {
+                color: #85B6E2;
+                float: left;
+                padding: 10px 20px 0 80px;
+                font-size: 20px;
+            }
+
+            .example .tigger {
+                display: block;
+                width: 80px;
+                padding: 10px;
+                text-align: center;
+                background: #fff;
+                border: 1px solid #999;
+                color: #333;
+                cursor: pointer;
+                float: left;
+            }
+
+            .example select {
+                margin-top: 10px;
+            }
+
+        .blk {
+            width: 700px;
+            height: 600px;
+            position: relative;
+        }
+
+            .blk .head, .blk .head-right, .blk .foot, .blk .foot-right {
+                background: url(../images/pop_up_bg.png);
+                overflow: hidden;
+                height: 4px;
+            }
+
+            .blk .head {
+                padding-left: 4px;
+            }
+
+            .blk .head-right {
+                background-position: right top;
+            }
+
+            .blk .foot {
+                padding-left: 4px;
+                background-position: left bottom;
+                _height: 3px;
+            }
+
+            .blk .foot-right {
+                background-position: right bottom;
+            }
+
+            .blk .main {
+                border-left: 2px solid #85B6E2;
+                border-right: 2px solid #85B6E2;
+                position: relative;
+                background: #fff;
+            }
+
+                .blk .main h2 {
+                    font: bold 16px "Microsoft YaHei";
+                    padding: 10px 20px 2px;
+                    color: #85B6E2;
+                }
+
+                .blk .main ul {
+                    padding: 20px;
+                    zoom: 1;
+                    font-size: 12px;
+                }
+
+                    .blk .main ul li {
+                        text-align: center;
+                        line-height: 30px;
+                        margin-bottom: 5px;
+                    }
+
+                        .blk .main ul li a {
+                            color: #333;
+                            display: block;
+                        }
+
+                            .blk .main ul li a:hover {
+                                background: #85B6E2;
+                                color: #fff;
+                                font-weight: bold;
+                                font-size: 14px;
+                            }
+
+
+        /* 自定义样式 */
+        .t5 .blk {
+            width: 700px;
+        }
+
+            .t5 .blk h2 {
+                color: #aaa;
+            }
+
+            .t5 .blk .main ul li a {
+                color: #aaa;
+            }
+
+            .t5 .blk .head, .t5 .blk .head-right, .t5 .blk .foot, .t5 .blk .foot-right {
+                background: url(~/images/pop_up_bg2.png);
+            }
+
+        /**/
+        * html .popup_iframe {
+            width: expression(this.previousSibling.style.width);
+            height: expression(this.previousSibling.style.height);
+        }
+
+
+        .main ul {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            border: 0;
+        }
+
+            .main ul li {
+                float: inherit;
+                margin: 0px 2px 0px 0px;
+                padding: 0px;
+                width: 120px;
+                height: 35px;
+                display: block;
+                border-radius: 0px;
+                box-shadow: #000 0px 0px 1px;
+                border: 0;
+                background-color: #F3F3F3;
+            }
+
+                /*.main ul li:hover ul {
+                    display: block;
+                }*/
+
+                .main ul li a {
+                    text-align: center;
+                    /*width: 100px;*/
+                    height: 37px;
+                    line-height: 35px;
+                    display: block;
+                    text-decoration: none;
+                    /*margin-bottom:20px;*/
+                }
+
+                .main ul li ul {
+                    display: none;
+                    position: relative;
+                    top: -37px;
+                    left: 121px;
+                }
+
+                    .main ul li ul li {
+                        margin: 0px 0px 2px 0px;
+                        padding: 0px;
+                        background-color: #FFFFFF;
+                    }
+
+        .sech {
+            background-color: pink;
+        }
+
+        .main ul li ul li:hover {
+            background: pink;
+        }
+
+        /*.main ul li ul li:hover ul {
+                visibility: visible;
+            }*/
+
+        .main ul li ul li ul {
+            /*visibility: hidden;*/
+            position: relative;
+            top: -37px;
+            left: 121px;
+        }
+
+            .main ul li ul li ul li {
+                background: #FFFFFF;
+            }
+
+                .main ul li ul li ul li:hover {
+                    background: #AFEEEE;
+                }
+
+        .thirdh {
+            background-color: #1E90FF;
+        }
+
+
+        .td {
+            border: solid #add9c0;
+            border-width: 0px 1px 1px 0px;
+            padding: 10px 0px;
+        }
+
+        .table {
+            border: solid #add9c0;
+            border-width: 1px 0px 0px 1px;
+        }
+    </style>
+</head>
+<body>
+    @using Qystem.Models
+    @{
+        List<WebSolution> webAppList = ViewBag.WebApp as List<WebSolution>
+           ;
+        List<WebSolution> sqlList = ViewBag.SQLAurze as List<WebSolution>
+                ;
+        List<WebSolution> mysqlList = ViewBag.MySql as List<WebSolution>
+                ;
+        List<WebSolution> storeList = ViewBag.Store as List<WebSolution>;
+        List<WebSolution> storeList2 = ViewBag.Store2 as List<WebSolution>;
+
+        List<WebSolution> VMlist1 = ViewBag.VMBaiscA as List<WebSolution>;
+        List<WebSolution> VMlist2 = ViewBag.VMStandardA as List<WebSolution>;
+        List<WebSolution> VMlist3 = ViewBag.VMAv2 as List<WebSolution>;
+
+    }
+    <!-- BEGIN: HOME PAGE Content -->
+    <div class="content">
+        <div class="smartCampaignMain">
+            <div class="application-scenario container" style="width:95%">
+                <h1 style="margin:17px;">网站应用场景与推荐架构</h1>
+                <div class="col-md-4 website-scenario" style="width:320px;padding-right: inherit;padding-top: 6%;padding-left: inherit;">
+                    <div class="scenario-title">
+                        <div class="home-p">总计：</div>
+                    </div>
+
+                    <div class="website-outline" style="height:400px;width:280px">
+                        <img style="padding-left:9px;padding-top:3px;" usemap="#planetmap" src="~/img/WebSindex.png" />
+                        <!--<div class="image-box image1"></div>-->
+                        <map name="planetmap" id="planetmap">
+
+                            @*IE<area shape="circle" coords="44,125,27" onclick="openDilog(1)" alt="Venus" />*@
+                            @*IE<area shape="rect" coords="30,200,60,260" onclick="openDilog(2)" alt="Mercury" />*@
+                            @*<area shape="circle" coords="100,250,50" onclick="alert('ok')" alt="Venus" />*@
+
+                            <area shape="circle" coords="70,171,25" onclick="openDilog(1)" alt="Venus" />
+                            <area shape="rect" coords="76,319,125,366" onclick="openDilog(2)" alt="Mercury" />
+                            <area shape="rect" coords="143,319,200,366" onclick="openDilog(3)" alt="Sun" />
+                            <area shape="rect" coords="155,151,255,202" onclick="openDilog(4)" alt="VM" />
+
+                        </map>
+                    </div>
+                    <div id="ele9" style="display:none" class="tigger">触发元素9</div>
+                    <div id="eleWeb" style="display:none" class="tigger">触发元素Web</div>
+                    <div id="eleSql" style="display:none" class="tigger">触发元素Web</div>
+                    <div id="eleStore" style="display:none" class="tigger">触发元素Web</div>
+                    <div id="eleVM" style="display:none" class="tigger">触发元素Web</div>
+                </div>
+                <div class="widget-content">
+                    <div class="widget-header">
+                        <i class="icon-th-list"></i>
+                        <h3>基于WebApp的小型网站架构</h3>
+                        <i class="icon-th-list"></i>
+                        @*导出Excel<img src="~/img/excel.jpg" />
+                            导出Pdf<img src="~/img/PDF.jpg" />*@
+                    </div> <!-- /widget-header -->
+                    <table class="table table-striped table-bordered" style="width:74%;border-width:1px;margin-top:2%">
+                        <thead>
+                            <tr>
+                                <th style="width:9%" scope="col">产品名称</th>
+                                <th style="width:9%" scope="col">产品型号</th>
+                                <th style="width:16%" scope="col">产品配置</th>
+                                <th style="width:6%" scope="col">单位</th>
+                                <th style="width:6%" scope="col">数量</th>
+                                <th style="width:10%" scope="col">OSSA单价</th>
+                                <th style="width:10%" scope="col">OSPA单价</th>
+                                <th style="width:9%" scope="col">OSSA/月</th>
+                                <th style="width:9%" scope="col">OSPA/月</th>
+                                <th style="width:10%" scope="col">备注</th>
+                                <th style="width:8%" scope="col">删除</th>
+                            </tr>
+                        </thead>
+
+                        <tbody></tbody>
+                    </table>
+
+                </div>
+                <div class="row">
+
+                    <div class="span4">
+
+                        <div class="widget">
+
+                            <div class="widget-header">
+                                <button id="fea" style="width:100%" class="widget-header">产品型号的差异</button>
+                            </div> <!-- /widget-header -->
+
+                            <div id="feature" style="display:none" class="widget-content">
+                                <p>
+                                    <strong>Web基本</strong> 磁盘空间10GB；无自动缩放功能；无地域分布式部署；无过渡环境等
+                                    <br /><strong>Web标准</strong> 更高的CPU处理能力 磁盘空间50GB；有自动缩放功能；有地域分布式部署；有过渡环境等
+                                    <br /><strong>Web高级</strong> 比标准更高的CPU处理能力 磁盘空间500GB；有自动缩放功能；有地域分布式部署；有过渡环境；自动备份等
+                                    <br />
+                                    <strong>虚拟机A基本系列</strong>基本级别为开发/测试工作负载和其他不要求负载平衡、自动缩放或内存密集型虚拟机的应用程序提供了一种经济实惠的选项。
+                                    <br /><strong>虚拟机A标准系列</strong> A 系列标准级别支持需要负载平衡、自动缩放的应用程序。
+                                    <br /><strong>虚拟机Av2系列</strong>Av2 标准是最新一代的 A 系列 VM，具有类似的 CPU 性能但磁盘速度更快。内存更大。
+                                    <br />
+                                    <br /><strong>数据库SQL</strong>是一种关系数据库即服务产品/服务，包含任务关键型功能。它支持现有 SQL Server 库和 API。只需几秒钟你即可在 Azure 上构建一个 SQL 数据库，而无需自己管理虚拟机或基础结构。
+                                    <br /><strong>数据库MySql</strong>支持弹性扩展与收缩,数据高度可靠和安全,提供高可用，支持灾备恢复，保障业务连续性,快速部署，无需人工维护基础架构层等。
+                                    <br />
+                                    <br /><strong>Redis缓存</strong>一种高级的键值存储服务，能为可快速扩展的 Azure 应用程序助力。基本层和标准层缓存提供的缓存大小最大为 53 GB，高级层缓存最大可支持 530 GB ，并可通过申请进一步进行扩展。
+                                    <br />
+                                    <br /><strong>本地冗余存储 (LRS)</strong>一个区域内维护数据的多个副本以提供高持久性。
+                                    <br /><strong>异地冗余存储 (GRS)</strong>不同区域的数据中心相互备份多个副本以提高持久性。
+                                </p>
+                            </div> <!-- /widget-content -->
+
+                        </div> <!-- /widget -->
+
+                    </div> <!-- /span5 -->
+
+                    <div class="span4">
+
+                        <div class="widget">
+
+                            <div class="widget-header">
+                                <button id="ad" style="width:100%" class="widget-header">SQL的优势</button>
+                            </div> <!-- /widget-header -->
+
+                            <div id="advantage" style="display:none" class="widget-content">
+                                <p>
+                                    1.SQL云数据库使用DTU计算单元作为<strong>计价标准</strong>，更准确的衡量数据库系统处理数据的能力。
+                                    <br />2.SQL on Azure在<strong>价格</strong>上也比阿里有很大的<strong>竞争优势</strong>。
+                                    <br />3.我们云数据库是<strong>含有数据存储空间</strong>的，而阿里需要自行购买
+                                    <br />4.我们的SQL数据库一直是<strong>最新的版本</strong>，而阿里的SQL数据库只有2008和2012版本且2012版本只有包年后才可以使用
+                                    <br />5.我们SQL数据库与数据库管理系统SSMS和VisualStudio等<strong>工具集成</strong>，无需购买其他管理工具
+                                </p>
+                            </div> <!-- /widget-content -->
+
+                        </div> <!-- /widget -->
+                    </div> <!-- /span4 -->
+
+                    <div class="span4">
+
+                        <div class="widget">
+
+                            <div class="widget-header">
+                                <button id="ho" style="width:100%" class="widget-header">怎么卖这款产品？</button>
+                            </div> <!-- /widget-header -->
+
+                            <div id="howtosale" style="display:none" class="widget-content">
+                                <p>
+                                    1.客户是否有对外发布的网站？
+                                    <br />2.网站静态网站还是动态网站，静态网站只用web应用服务就可以了。动态网站是web应用+数据库。如果赠送空间不够需要再购买存储。
+                                    <br />3.如有数据库，使用什么数据库？我们的SQL数据库非常有竞争优势。产品优势，高可用，冗余备份，价格优势。
+                                    <br />4.我们的Web应用完全基于PaaS层，不是在虚机上搭建。让开发者或业务部门更专注于应用。涵盖ISS，Apache，Tomcat等主流中间件。
+                                    <br />5.AzureSDK集成VisualStudio、SSMS等开发平台。使得本地与云端混合开发部署更轻松便捷。
+                                </p>
+                            </div> <!-- /widget-content -->
+
+                        </div> <!-- /widget -->
+
+                    </div> <!-- /span5 -->
+
+                </div>
+
+
+                <hr />
+                <div style="clear:both"></div>
+
+            </div>
+        </div>
+
+        @if (webAppList != null && webAppList.Count > 0)
+        {
+            <div id="blkWeb" class="blk" style="display:none;width:100%">
+                <div class="head"><div class="head-right"></div></div>
+                <div class="main">
+                    <a href="javascript:void(0)" id="closeWeb" class="closeBtn">关闭</a>
+                    <ul>
+                        @foreach (var t in webAppList)
+                        {
+
+                            <li style="float:inherit">
+                                <a href="javascript:void(0)" style="display:inline">@t.ProductType</a>
+                                <ul style="padding:6px">
+                                    <li style="width:700px;height:100%">
+                                        <table border="0" style="text-align:center;background:inherit" cellspacing="1" cellpadding="0">
+                                            <tr>
+                                                <th style="width:15%;text-align:center">产品名称</th>
+                                                <th style="width:20%;text-align:center">产品型号</th>
+                                                <th style="width:20%;text-align:center">计量单位</th>
+                                                <th style="width:20%;text-align:center">OSSA单价</th>
+                                                <th style="width:10%;text-align:center">OSSA价格/月</th>
+                                                <th style="width:10%;text-align:center;padding-right:10px">选择</th>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:15%;text-align:center">@t.ProductName</td>
+                                                <td style="width:20%;text-align:center">@t.ProductType</td>
+                                                <td style="width:20%;text-align:center">@t.Number</td>
+                                                <td style="width:20%;text-align:center">@(t.OSSAunitCost == null ? "" : Convert.ToDouble(t.OSSAunitCost).ToString("#0.00"))</td>
+                                                <td style="width:10%;text-align:center">@t.OSSAMonthlyCost</td>
+                                                @*<td >
+                                                        <input type="checkbox"  />
+                                                    </td>*@
+
+                                                <td class="action-td" style="text-align:center;padding-right:10px">
+                                                    <a href="javascript:;" attr-PrimaryKey="@t.PrimaryKey" attr-ProductName="@t.ProductName"
+                                                       attr-ProductType="@t.ProductType" attr-Configuration="@t.Configuration"
+                                                       attr-Unit="@t.Unit" attr-Number="@t.Number" attr-OSSAunitCost="@t.OSSAunitCost"
+                                                       attr-OSSPunitCost="@t.OSSPunitCost" attr-OSSAMonthlyCost="@t.OSSAMonthlyCost"
+                                                       attr-OSSPMonthlyCost="@t.OSSPMonthlyCost" attr-remark="@t.Remark"
+                                                       onclick="saveWeb(this)" class="btn btn-small btn-warning">
+                                                        <i class="icon-ok"></i>
+                                                    </a>
+                                                </td>
+
+                                            </tr>
+                                        </table>
+
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="foot"><div class="foot-right"></div></div>
+            </div>
+        }
+
+
+        <div id="blkSql" class="blk" style="display:none;width:100%">
+            <div class="head"><div class="head-right"></div></div>
+            <div class="main">
+                <a href="javascript:void(0)" id="closeSql" class="closeBtn">关闭</a>
+                <ul>
+                    <li style="float:inherit;">
+                        <a style="display:inline" href="javascript:void(0)">SQL数据库</a>
+                        <ul style="padding:2px">
+                            @foreach (var t in sqlList)
+                            {
+                                <li>
+                                    <a href="javascript:void(0) style=" display:inline"">@t.ProductType</a>
+                                    <ul style="padding:6px">
+                                        <li style="width:500px;height:100%">
+                                            <table border="0" style="text-align:center;background:inherit;width:100%" cellspacing="1" cellpadding="0">
+                                                <tr>
+                                                    <th style="width:20%;text-align:center">产品名称</th>
+                                                    <th style="width:20%;text-align:center">产品型号</th>
+                                                    <th style="width:10%;text-align:center">计量单位</th>
+                                                    <th style="width:20%;text-align:center">OSSA单价</th>
+                                                    <th style="width:20%;text-align:center">OSSA价格/月</th>
+                                                    <th style="width:10%;text-align:center;padding-right:10px;">选择</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width:20%;text-align:center">@t.ProductName</td>
+                                                    <td style="width:20%;text-align:center">@t.ProductType</td>
+                                                    <td style="width:10%;text-align:center">@t.Number</td>
+                                                    <td style="width:20%;text-align:center">@(t.OSSAunitCost == null ? "" : Convert.ToDouble(t.OSSAunitCost).ToString("#0.00"))</td>
+                                                    <td style="width:20%;text-align:center">@t.OSSAMonthlyCost</td>
+                                                    <td td class="action-td" style="text-align:center;padding-right:10px;">
+                                                        <a href="javascript:;" type="checkbox" attr-PrimaryKey="@t.PrimaryKey" attr-ProductName="@t.ProductName"
+                                                           attr-ProductType="@t.ProductType" attr-Configuration="@t.Configuration"
+                                                           attr-Unit="@t.Unit" attr-Number="@t.Number" attr-OSSAunitCost="@t.OSSAunitCost"
+                                                           attr-OSSPunitCost="@t.OSSPunitCost" attr-OSSAMonthlyCost="@t.OSSAMonthlyCost"
+                                                           attr-OSSPMonthlyCost="@t.OSSPMonthlyCost" attr-remark="@t.Remark"
+                                                           onclick="saveWeb(this)" class="btn btn-small btn-warning">
+                                                            <i class="icon-ok"></i>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            }
+                        </ul>
+
+                    </li>
+                    <li style="float:inherit;">
+                        <a href="javascript:void(0)" style="display:inline">MySql数据库</a>
+                        <ul style="padding:2px">
+                            @foreach (var t in mysqlList)
+                            {
+                                <li>
+                                    <a href="javascript:void(0)">@(t.ProductType)</a>
+                                    <ul style="padding:2px">
+                                        <li style="width:500px;height:100%">
+                                            <table border="0" style="text-align:center;background:inherit" cellspacing="1" cellpadding="0">
+                                                <tr>
+                                                    <th style="width:20%;text-align:center">产品名称</th>
+                                                    <th style="width:20%;text-align:center">产品型号</th>
+                                                    <th style="width:10%;text-align:center">计量单位</th>
+                                                    <th style="width:20%;text-align:center">OSSA单价</th>
+                                                    <th style="width:20%;text-align:center">OSSA价格/月</th>
+                                                    <th style="width:10%;text-align:center;padding-right:10px;">选择</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width:15%;text-align:center">@t.ProductName</td>
+                                                    <td style="width:20%;text-align:center">@t.ProductType</td>
+                                                    <td style="width:20%;text-align:center">@t.Number</td>
+                                                    <td style="width:20%;text-align:center">@(t.OSSAunitCost == null ? "" : Convert.ToDouble(t.OSSAunitCost).ToString("#0.00"))</td>
+                                                    <td style="width:10%;text-align:center">@t.OSSAMonthlyCost</td>
+
+                                                    <td class="action-td" style="text-align:center;padding-right:10px">
+                                                        <a href="javascript:;" attr-PrimaryKey="@t.PrimaryKey" attr-ProductName="@t.ProductName"
+                                                           attr-ProductType="@t.ProductType" attr-Configuration="@t.Configuration"
+                                                           attr-Unit="@t.Unit" attr-Number="@t.Number" attr-OSSAunitCost="@t.OSSAunitCost"
+                                                           attr-OSSPunitCost="@t.OSSPunitCost" attr-OSSAMonthlyCost="@t.OSSAMonthlyCost"
+                                                           attr-OSSPMonthlyCost="@t.OSSPMonthlyCost" attr-remark="@t.Remark"
+                                                           onclick="saveWeb(this)" class="btn btn-small btn-warning">
+                                                            <i class="icon-ok"></i>
+                                                        </a>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="foot"><div class="foot-right"></div></div>
+        </div>
+
+        <div id="blkStore" class="blk" style="display:none;width:100%">
+            <div class="head"><div class="head-right"></div></div>
+            <div class="main">
+                <a href="javascript:void(0)" id="closeStore" class="closeBtn">关闭</a>
+                <ul>
+                    <li style="float:inherit;width: 151px;">
+                        <a style="display:inline" href="javascript:void(0)">常规块Blob存储-LRS</a>
+                        <ul style="padding:6px;left:151px">
+                            @foreach (var t in storeList)
+                            {
+                                <li style="width:151px">
+                                    <a href="javascript:void(0) style=" display:inline"">@t.ProductType</a>
+                                    <ul style="padding:6px;left:151px">
+                                        <li style="width:600px;height:100%;">
+                                            <table border="0" style="text-align:center;background:inherit;width:100%" cellspacing="1" cellpadding="0">
+                                                <tr>
+                                                    <th style="width:20%;text-align:center">产品名称</th>
+                                                    <th style="width:25%;text-align:center">产品型号</th>
+                                                    <th style="width:10%;text-align:center">计量单位</th>
+                                                    <th style="width:20%;text-align:center">OSSA单价</th>
+                                                    <th style="width:15%;text-align:center">OSSA价格/月</th>
+                                                    <th style="width:10%;text-align:center;padding-right:10px;">选择</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width:20%;text-align:center">@t.ProductName</td>
+                                                    <td style="width:25%;text-align:center">@t.ProductType</td>
+                                                    <td style="width:10%;text-align:center">@t.Number</td>
+                                                    <td style="width:20%;text-align:center">@(t.OSSAunitCost == null ? "" : Convert.ToDouble(t.OSSAunitCost).ToString("#0.00"))</td>
+                                                    <td style="width:15%;text-align:center">@t.OSSAMonthlyCost</td>
+                                                    <td td class="action-td" style="text-align:center;padding-right:10px">
+                                                        <a href="javascript:;" type="checkbox" attr-PrimaryKey="@t.PrimaryKey" attr-ProductName="@t.ProductName"
+                                                           attr-ProductType="@t.ProductType" attr-Configuration="@t.Configuration"
+                                                           attr-Unit="@t.Unit" attr-Number="@t.Number" attr-OSSAunitCost="@t.OSSAunitCost"
+                                                           attr-OSSPunitCost="@t.OSSPunitCost" attr-OSSAMonthlyCost="@t.OSSAMonthlyCost"
+                                                           attr-OSSPMonthlyCost="@t.OSSPMonthlyCost"
+                                                           attr-remark="@t.Remark"
+                                                           attr-type="store"
+                                                           onclick="saveWeb(this)" class="btn btn-small btn-warning">
+                                                            <i class="icon-ok"></i>
+                                                        </a>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            }
+                        </ul>
+
+                    </li>
+                    <li style="float:inherit;width: 151px;">
+                        <a href="javascript:void(0)" style="display:inline">常规块Blob存储-GRS</a>
+                        <ul style="padding:6px;left:151px">
+                            @foreach (var t in storeList2)
+                            {
+                                <li style="width:151px">
+                                    <a href="javascript:void(0)">@(t.ProductType)</a>
+                                    <ul style="padding:6px;left:151px">
+                                        <li style="width:600px;height:100%">
+                                            <table border="0" style="text-align:center;background:inherit;width:100%" cellspacing="1" cellpadding="0">
+                                                <tr>
+                                                    <th style="width:20%;text-align:center">产品名称</th>
+                                                    <th style="width:25%;text-align:center">产品型号</th>
+                                                    <th style="width:10%;text-align:center">计量单位</th>
+                                                    <th style="width:20%;text-align:center">OSSA单价</th>
+                                                    <th style="width:15%;text-align:center">OSSA价格/月</th>
+                                                    <th style="width:10%;text-align:center;padding-right:10px;">选择</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width:20%;text-align:center">@t.ProductName</td>
+                                                    <td style="width:25%;text-align:center">@t.ProductType</td>
+                                                    <td style="width:10%;text-align:center">@t.Number</td>
+                                                    <td style="width:20%;text-align:center">@(t.OSSAunitCost == null ? "" : Convert.ToDouble(t.OSSAunitCost).ToString("#0.00"))</td>
+                                                    <td style="width:15%;text-align:center">@t.OSSAMonthlyCost</td>
+
+                                                    <td class="action-td" style="text-align:center;padding-right:10px">
+                                                        <a href="javascript:;" attr-PrimaryKey="@t.PrimaryKey" attr-ProductName="@t.ProductName"
+                                                           attr-ProductType="@t.ProductType" attr-Configuration="@t.Configuration"
+                                                           attr-Unit="@t.Unit" attr-Number="@t.Number" attr-OSSAunitCost="@t.OSSAunitCost"
+                                                           attr-OSSPunitCost="@t.OSSPunitCost" attr-OSSAMonthlyCost="@t.OSSAMonthlyCost"
+                                                           attr-OSSPMonthlyCost="@t.OSSPMonthlyCost" attr-remark="@t.Remark"
+                                                           attr-type="store"
+                                                           onclick="saveWeb(this)" class="btn btn-small btn-warning">
+                                                            <i class="icon-ok"></i>
+                                                        </a>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="foot"><div class="foot-right"></div></div>
+        </div>
+
+        @*//VM start*@
+
+        <div id="blkVM" class="blk" style="display:none;width:100%">
+            <div class="head"><div class="head-right"></div></div>
+            <div class="main">
+                <a href="javascript:void(0)" id="closeVM" class="closeBtn">关闭</a>
+                <ul>
+                    <li style="float:inherit;width: 151px;">
+                        <a style="display:inline" href="javascript:void(0)">A基本系列</a>
+                        <ul style="padding:6px;left:151px">
+                            @foreach (var t in VMlist1)
+                            {
+                                <li style="width:151px">
+                                    <a href="javascript:void(0) style=" display:inline"">@t.ProductType</a>
+                                    <ul style="padding:6px;left:151px">
+                                        <li style="width:500px;height:100%;">
+                                            <table border="0" style="text-align:center;background:inherit;width:100%" cellspacing="1" cellpadding="0">
+                                                <tr>
+                                                    <th style="width:15%;text-align:center">产品名称</th>
+                                                    <th style="width:10%;text-align:center">产品型号</th>
+                                                    <th style="width:10%;text-align:center">计量单位</th>
+                                                    <th style="width:10%;text-align:center">OSSA单价</th>
+                                                    <th style="width:15%;text-align:center">OSSA价格/月</th>
+                                                    <th style="width:10%;text-align:center;padding-right:10px">选择</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width:15%;text-align:center">@t.ProductName</td>
+                                                    <td style="width:10%;text-align:center">@t.ProductType</td>
+                                                    <td style="width:10%;text-align:center">@t.Number</td>
+                                                    <td style="width:10%;text-align:center">@(t.OSSAunitCost == null ? "" : Convert.ToDouble(t.OSSAunitCost).ToString("#0.00"))</td>
+                                                    <td style="width:15%;text-align:center">@t.OSSAMonthlyCost</td>
+                                                    <td td class="action-td" style="text-align:center;padding-right:10px">
+                                                        <a href="javascript:;" type="checkbox" attr-PrimaryKey="@t.PrimaryKey" attr-ProductName="@t.ProductName"
+                                                           attr-ProductType="@t.ProductType" attr-Configuration="@t.Configuration"
+                                                           attr-Unit="@t.Unit" attr-Number="@t.Number" attr-OSSAunitCost="@t.OSSAunitCost"
+                                                           attr-OSSPunitCost="@t.OSSPunitCost" attr-OSSAMonthlyCost="@t.OSSAMonthlyCost"
+                                                           attr-OSSPMonthlyCost="@t.OSSPMonthlyCost"
+                                                           attr-remark="@t.Remark"
+                                                           @*attr-type="store"*@
+                                                           onclick="saveWeb(this)" class="btn btn-small btn-warning">
+                                                            <i class="icon-ok"></i>
+                                                        </a>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            }
+                        </ul>
+
+                    </li>
+                    <li style="float:inherit;width: 151px;">
+                        <a href="javascript:void(0)" style="display:inline">A标准系列</a>
+                        <ul style="padding:6px;left:151px">
+                            @foreach (var t in VMlist2)
+                            {
+                                <li style="width:151px">
+                                    <a href="javascript:void(0) style=" display:inline"">@t.ProductType</a>
+                                    <ul style="padding:6px;left:151px">
+                                        <li style="width:500px;height:100%;">
+                                            <table border="0" style="text-align:center;background:inherit;width:100%" cellspacing="1" cellpadding="0">
+                                                <tr>
+                                                    <th style="width:15%;text-align:center">产品名称</th>
+                                                    <th style="width:10%;text-align:center">产品型号</th>
+                                                    <th style="width:10%;text-align:center">计量单位</th>
+                                                    <th style="width:10%;text-align:center">OSSA单价</th>
+                                                    <th style="width:15%;text-align:center">OSSA价格/月</th>
+                                                    <th style="width:10%;text-align:center;padding-right:10px">选择</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width:15%;text-align:center">@t.ProductName</td>
+                                                    <td style="width:10%;text-align:center">@t.ProductType</td>
+                                                    <td style="width:10%;text-align:center">@t.Number</td>
+                                                    <td style="width:10%;text-align:center">@(t.OSSAunitCost == null ? "" : Convert.ToDouble(t.OSSAunitCost).ToString("#0.00"))</td>
+                                                    <td style="width:15%;text-align:center">@t.OSSAMonthlyCost</td>
+                                                    <td td class="action-td" style="text-align:center;padding-right:10px">
+                                                        <a href="javascript:;" type="checkbox" attr-PrimaryKey="@t.PrimaryKey" attr-ProductName="@t.ProductName"
+                                                           attr-ProductType="@t.ProductType" attr-Configuration="@t.Configuration"
+                                                           attr-Unit="@t.Unit" attr-Number="@t.Number" attr-OSSAunitCost="@t.OSSAunitCost"
+                                                           attr-OSSPunitCost="@t.OSSPunitCost" attr-OSSAMonthlyCost="@t.OSSAMonthlyCost"
+                                                           attr-OSSPMonthlyCost="@t.OSSPMonthlyCost"
+                                                           attr-remark="@t.Remark"
+                                                           @*attr-type="store"*@
+                                                           onclick="saveWeb(this)" class="btn btn-small btn-warning">
+                                                            <i class="icon-ok"></i>
+                                                        </a>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            }
+                        </ul>
+                    </li>
+                    <li style="float:inherit;width: 151px;">
+                        <a href="javascript:void(0)" style="display:inline">Av2系列</a>
+                        <ul style="padding:6px;left:151px">
+                            @foreach (var t in VMlist3)
+                            {
+                                <li style="width:151px">
+                                    <a href="javascript:void(0) style=" display:inline"">@t.ProductType</a>
+                                    <ul style="padding:6px;left:151px">
+                                        <li style="width:500px;height:100%;">
+                                            <table border="0" style="text-align:center;background:inherit;width:100%" cellspacing="1" cellpadding="0">
+                                                <tr>
+                                                    <th style="width:15%;text-align:center">产品名称</th>
+                                                    <th style="width:10%;text-align:center">产品型号</th>
+                                                    <th style="width:10%;text-align:center">计量单位</th>
+                                                    <th style="width:10%;text-align:center">OSSA单价</th>
+                                                    <th style="width:15%;text-align:center">OSSA价格/月</th>
+                                                    <th style="width:10%;text-align:center;padding-right:10px">选择</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width:15%;text-align:center">@t.ProductName</td>
+                                                    <td style="width:10%;text-align:center">@t.ProductType</td>
+                                                    <td style="width:10%;text-align:center">@t.Number</td>
+                                                    <td style="width:10%;text-align:center">@(t.OSSAunitCost == null ? "" : Convert.ToDouble(t.OSSAunitCost).ToString("#0.00"))</td>
+                                                    <td style="width:15%;text-align:center">@t.OSSAMonthlyCost</td>
+                                                    <td td class="action-td" style="text-align:center;padding-right:10px">
+                                                        <a href="javascript:;" type="checkbox" attr-PrimaryKey="@t.PrimaryKey" attr-ProductName="@t.ProductName"
+                                                           attr-ProductType="@t.ProductType" attr-Configuration="@t.Configuration"
+                                                           attr-Unit="@t.Unit" attr-Number="@t.Number" attr-OSSAunitCost="@t.OSSAunitCost"
+                                                           attr-OSSPunitCost="@t.OSSPunitCost" attr-OSSAMonthlyCost="@t.OSSAMonthlyCost"
+                                                           attr-OSSPMonthlyCost="@t.OSSPMonthlyCost"
+                                                           attr-remark="@t.Remark"
+                                                           @*attr-type="store"*@
+                                                           onclick="saveWeb(this)" class="btn btn-small btn-warning">
+                                                            <i class="icon-ok"></i>
+                                                        </a>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="foot"><div class="foot-right"></div></div>
+        </div>
+
+
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    <!-- END: Documentation Content -->
+    <script>
+        var tWeb = new PopupLayer({ trigger: "#eleWeb", popupBlk: "#blkWeb", closeBtn: "#closeWeb", offsets: { x: 700, y: 300 } });
+        var tSql = new PopupLayer({ trigger: "#eleSql", popupBlk: "#blkSql", closeBtn: "#closeSql", offsets: { x: 700, y: 300 } });
+        var tStore = new PopupLayer({ trigger: "#eleStore", popupBlk: "#blkStore", closeBtn: "#closeStore", offsets: { x: 700, y: 300 } });
+        var tVM = new PopupLayer({ trigger: "#eleVM", popupBlk: "#blkVM", closeBtn: "#closeVM", offsets: { x: 700, y: 300 } });
+
+
+
+        function openDilog(opentype) {
+            if (opentype == 1) {
+                $("#eleWeb").click();
+
+                var cusC = $("#blkWeb").parent(".popupLayer");
+                $(cusC).attr("style", $(cusC).attr("style") + ";width:900px;left:25%");
+
+                // $("#closeSql").click();
+                // $("#closeStore").click();
+
+                $("#blkSql").parent(".popupLayer").hide();
+                $("#blkStore").parent(".popupLayer").hide();
+                $("#blkVM").parent(".popupLayer").hide();
+
+
+            }
+            else if (opentype == 2) {
+                $("#eleSql").click();
+
+                var cusS = $("#blkSql").parent(".popupLayer");
+                $(cusS).attr("style", $(cusS).attr("style") + ";width:900px;left:25%");
+                // $("#closeWeb").click();
+                //$("#closeStore").click();
+
+                $("#blkWeb").parent(".popupLayer").hide();
+                $("#blkStore").parent(".popupLayer").hide();
+                $("#blkVM").parent(".popupLayer").hide();
+
+            }
+            else if (opentype == 3) {
+                $("#eleStore").click();
+                var cusS = $("#blkStore").parent(".popupLayer");
+                $(cusS).attr("style", $(cusS).attr("style") + ";width:900px;left:25%");
+                // $("#closeWeb").click();
+                //$("#closeSql").click();
+
+                $("#blkWeb").parent(".popupLayer").hide();
+                $("#blkSql").parent(".popupLayer").hide();
+                $("#blkVM").parent(".popupLayer").hide();
+
+
+            }
+            else if (opentype == 4) {
+                $("#eleVM").click();
+                var cusS = $("#blkVM").parent(".popupLayer");
+                $(cusS).attr("style", $(cusS).attr("style") + ";width:900px;left:25%");
+                // $("#closeWeb").click();
+                //$("#closeSql").click();
+
+                $("#blkWeb").parent(".popupLayer").hide();
+                $("#blkSql").parent(".popupLayer").hide();
+                $("#blkStore").parent(".popupLayer").hide();
+
+
+            }
+            else $("#ele9").click();
+
+            //
+
+
+
+            //  $(".popupLayer").css("style", "width:900px");
+        }
+
+
+        function saveWeb(control) {
+
+            var PrimaryKey = $(control).attr("attr-PrimaryKey");
+            var ProductName = $(control).attr("attr-ProductName");
+            var ProductType = $(control).attr("attr-ProductType");
+            var Configuration = $(control).attr("attr-Configuration");
+            var Unit = $(control).attr("attr-Unit");
+            var Number = $(control).attr("attr-Number");
+            var OSSAunitCost = $(control).attr("attr-OSSAunitCost");
+            var OSSPunitCost = $(control).attr("attr-OSSPunitCost");
+            var OSSAMonthlyCost = $(control).attr("attr-OSSAMonthlyCost");
+            var OSSPMonthlyCost = $(control).attr("attr-OSSPMonthlyCost");
+            var remark = $(control).attr("attr-Remark");
+            var proType = $(control).attr("attr-type");
+
+
+            var isSelect = $(control).attr("checked") == "checked" ? true : false;
+            var isExist = false;
+
+            $(".table-bordered tr").each(function () {
+
+                var s = $(this).find("td:first").html();
+
+                if (s == PrimaryKey) {
+                    isExist = true;
+                    if (!isSelect) $(this).remove();
+                }
+
+            });
+
+            if (!isExist) {
+
+
+                //<table class="table table-striped " style="width:70%">
+                //        <thead>
+                //            <tr>
+                //                <th style="width:2%" scope="col">产品名称</th>
+                //                <th style="width:15%" scope="col">产品型号</th>
+                //                <th style="width:40%" scope="col">产品配置</th>
+                //                <th style="width:15%" scope="col">计量单位</th>
+                //                <th style="width:8%" scope="col">数量</th>
+                //                <th style="width:12%" scope="col">OSSA单价</th>
+                //                <th style="width:10%" scope="col">OSPA单价</th>
+                //                <th style="width:10%" scope="col">OSSA/月</th>
+                //                <th style="width:10%" scope="col">OSPA/月</th>
+                //                <th style="width:10%" scope="col">备注</th>
+                //            </tr>
+                //        </thead>
+
+                //        <tbody>
+
+                //        </tbody>
+                //    </table>
+
+
+                ////  <tr>
+                //                  <td>Michael</td>
+                //                  <td>Jordan</td>
+                //                  <td>mjordan</td>
+                //                  <td>Chicago Bulls</td>
+                //                  <td class="action-td">
+                //                      <a href="javascript:;" class="btn btn-small btn-warning">
+                //                          <i class="icon-ok"></i>
+                //                      </a>
+                //                      <a href="javascript:;" class="btn btn-small">
+                //                          <i class="icon-remove"></i>
+                //                      </a>
+                //                  </td>
+                //              </tr>
+
+                var innerhtml = "";
+                innerhtml += "<tr attr-id='" + PrimaryKey + "'>";
+                innerhtml += "  <td>" + ProductName + "</td>";
+                innerhtml += "  <td>" + ProductType + "</td>";
+                innerhtml += "  <td title=\"" + Configuration + "\">" + Configuration.substr(0, 29) + "<em style=\"color:red\">...</em></td>";
+                innerhtml += "  <td>" + Unit + "</td>";
+
+                if (proType == "store") {
+                    innerhtml += "  <td><input onchange='change(this)' type='text' style='width:100%' value='" + parseInt(Number) + "'></td>";
+                }
+                else innerhtml += "  <td>" + parseInt(Number) + "</td>";
+
+                innerhtml += "  <td>" + OSSAunitCost + "</td>";
+                innerhtml += "       <td>" + OSSPunitCost + "</td>";
+                innerhtml += "        <td>" + OSSAMonthlyCost + "</td>";
+                innerhtml += "       <td>" + OSSPMonthlyCost + "</td>";
+                innerhtml += "      <td>" + remark + "</td>";
+                innerhtml += " <td class=\"action-td\">";
+                innerhtml += "     <a href=\"javascript:void(0);\"  onclick=\"$(this).parents('tr').remove();comTotalPrice();\" class=\"btn btn-small\">";
+                innerhtml += "     <i class=\"icon-remove\"></i>";
+                innerhtml += "     </a>";
+                innerhtml += "  </td>";
+                innerhtml += "</tr>";
+                $(".table-bordered tbody").append(innerhtml);
+            }
+            comTotalPrice();
+        }
+
+        /*
+        //function saveSql(control) {
+        //    var sqldb = $(control).attr("attr-sqldb");
+        //    var DTUOReDTU = $(control).attr("attr-DTUOReDTU");
+        //    var ossa = $(control).attr("attr-ossa");
+        //    var sqlserverType = $(control).attr("attr-SqlServerType");
+        //    var configuration = $(control).attr("attr-configuration");
+        //    var monthly = $(control).attr("attr-monthly");
+        //    var isSelect = $(control).attr("checked") == "checked" ? true : false;
+        //    var isExist = false;
+
+        //    $("#ser-sqlserver tr").each(function () {
+
+        //        var s = $(this).find("td:eq(2)").html();
+
+        //        if (s == sqlserverType) {
+        //            isExist = true;
+        //            if (!isSelect) $(this).remove();
+        //        }
+
+        //    });
+
+        //    if (!isExist) {
+        //        var innerhtml = "";
+        //        innerhtml += "<tr>";
+        //        innerhtml += "  <td>" + sqldb + "</td>";
+        //        innerhtml += "       <td>" + DTUOReDTU + "</td>";
+        //        innerhtml += "        <td>" + sqlserverType + "</td>";
+        //        innerhtml += "       <td>" + configuration + "</td>";
+        //        innerhtml += "      <td>" + ossa + "</td>";
+        //        innerhtml += "       <td>" + monthly + "</td>";
+        //        innerhtml += "    </tr>";
+        //        $("#ser-sqlserver tbody").append(innerhtml);
+        //    }
+
+        //    comTotalPrice();
+        //}
+
+        //function saveMysql(control) {
+        //    var mysql = "MySql";
+        //    var mysqltype = $(control).attr("attr-mysqltype");
+        //    var ossa = $(control).attr("attr-ossa");
+        //    var unit = $(control).attr("attr-unit");
+        //    var configuration = $(control).attr("attr-configuration");
+
+
+        //    var monthly = $(control).attr("attr-monthly");
+        //    var isSelect = $(control).attr("checked") == "checked" ? true : false;
+        //    var isExist = false;
+
+        //    $("#ser-mysql tr").each(function () {
+
+        //        var s = $(this).find("td:eq(1)").html();
+
+        //        if (s == mysqltype) {
+        //            isExist = true;
+        //            if (!isSelect) $(this).remove();
+        //        }
+
+        //    });
+
+        //    if (!isExist) {
+        //        var innerhtml = "";
+        //        innerhtml += "<tr>";
+        //        innerhtml += "  <td>" + mysql + "</td>";
+        //        innerhtml += "       <td>" + mysqltype + "</td>";
+        //        innerhtml += "        <td>" + configuration + "</td>";
+        //        innerhtml += "       <td>" + unit + "</td>";
+        //        innerhtml += "      <td>" + ossa + "</td>";
+        //        innerhtml += "       <td>" + monthly + "</td>";
+        //        innerhtml += "    </tr>";
+        //        $("#ser-mysql tbody").append(innerhtml);
+        //    }
+
+        //    comTotalPrice();
+        //}
+
+        //function saveStore(control) {
+        //    var WebStorageType = $(control).attr("attr-WebStorageType");
+        //    var storage = $(control).attr("attr-Storage");
+        //    var StorageType = $(control).attr("attr-StorageType");
+        //    var redundancyType = $(control).attr("attr-redundancyType");
+        //    var range = $(control).attr("attr-range");
+        //    var unit = $(control).attr("attr-Unit");
+        //    var ossa = $(control).attr("attr-ossa");
+        //    var isSelect = $(control).attr("checked") == "checked" ? true : false;
+        //    var isExist = false;
+
+        //    $("#ser-store tr").each(function () {
+        //        var s = $(this).attr("attr-id");
+
+        //        if (s == WebStorageType) {
+        //            isExist = true;
+        //            if (!isSelect) $(this).remove();
+        //        }
+
+        //    });
+
+        //    if (!isExist) {
+        //        var innerhtml = "";
+        //        innerhtml += "<tr attr-id='" + WebStorageType + "' >";
+        //        innerhtml += "  <td>" + storage + "</td>";
+        //        innerhtml += "       <td>" + StorageType + "</td>";
+        //        innerhtml += "        <td>" + redundancyType + "</td>";
+        //        innerhtml += "       <td>" + range + "</td>";
+        //        innerhtml += "      <td>" + unit + "</td>";
+        //        innerhtml += "       <td>" + ossa + "</td>";
+        //        innerhtml += "    </tr>";
+        //        $("#ser-store tbody").append(innerhtml);
+        //    }
+
+        //    comTotalPrice();
+        //}
+        */
+
+        //计量单位计算
+        function change(control) {
+
+            var currentTr = $(control).parents("tr");
+
+            var ossaPrice = parseFloat($(currentTr).find("td:eq(5)").html());
+            var osspPrice = parseFloat($(currentTr).find("td:eq(6)").html());
+            var unit = parseInt($(control).val());
+
+
+
+            var ossaMonth = unit * ossaPrice;
+            var osspMonth = unit * osspPrice;
+
+            if (!isNaN(ossaMonth)) {
+                $(currentTr).find("td:eq(7)").html(ossaMonth);
+            }
+
+            if (!isNaN(osspMonth)) {
+                $(currentTr).find("td:eq(8)").html(osspMonth);
+            }
+
+            comTotalPrice();
+
+        }
+
+
+        function comTotalPrice() {
+            var price = 0.0;
+            $(".table-bordered").each(function () {
+
+                $(this).find("tr:gt(0)").each(function () {
+                    price += parseFloat($(this).find("td:eq(7)").html());
+
+                });
+
+            });
+
+            price = price.toFixed(2);
+            $(".home-p").html("总计：" + price);
+        }
+
+
+        // fadetoggle to div 说明部分
+        $(document).ready(function () {
+            $("#ho").click(function () {
+                //$("#div1").fadeToggle();
+                $("#howtosale").fadeToggle("slow");
+                //$("#div3").fadeToggle(3000);
+            });
+        });
+
+
+        $(document).ready(function () {
+            $("#fea").click(function () {
+                //$("#div1").fadeToggle();
+                $("#feature").fadeToggle("slow");
+                //$("#div3").fadeToggle(3000);
+            });
+        });
+
+        $(document).ready(function () {
+            $("#ad").click(function () {
+                //$("#div1").fadeToggle();
+                $("#advantage").fadeToggle("slow");
+                //$("#div3").fadeToggle(3000);
+            });
+        });
+
+        $(document).ready(function () {
+            $(".popupLayer>.blk>.main>ul>li").on("click", function (e) {
+                e.stopPropagation();
+                $(".popupLayer>.blk>.main>ul ul").hide();
+                $(this).children("ul").show();
+
+
+
+            }
+
+                );
+
+
+          
+        });
+
+
+
+        $(document).ready(function () {
+            $(".popupLayer>.blk>.main>ul>li>ul>li").on("click", function (e) {
+                e.stopPropagation();
+                $(".popupLayer>.blk>.main>ul>li>ul>li ul").hide();
+                $(this).children("ul").show();
+
+
+
+            }
+
+                );
+
+
+
+        });
+        //BaiDu
+
+        var _hmt = _hmt || [];
+        (function baidu() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?5ccb0a1bf5dac60e254816e3aa5ce359";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+
+    </script>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="~/js/jquery-1.7.2.min.js"></script>
+    <script src="~/js/excanvas.min.js"></script>
+    <script src="~/js/jquery.flot.js"></script>
+    <script src="~/js/jquery.flot.pie.js"></script>
+    <script src="~/js/jquery.flot.orderBars.js"></script>
+    <script src="~/js/jquery.flot.resize.js"></script>
+
+    <script src="~/js/bootstrapTable.js"></script>
+    <script src="~/js/charts/bar.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,828 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    @*<meta name="keywords" content="1 元试用解决方案, 网站建设, Web 应用, MySQL 数据库, MySQL on Azure, 存储" />
+        <meta name="description" content="利用1 元试用中提供的 1,500 元 Azure 服务使用额度，您可以针对不同的网站类型和需求，快速搭建一个带有 MySQL 数据库或者 SQL 数据库的网站。MySQL 数据库与网站应用的组合，可适用于常见的开源LAMP（Linux+  Apache + MySQL + PHP）架构， 而SQL 数据库与网站应用的组合则可适用于基于 .NET 平台的网站架构 : ASP.NET, ASP.NET MVC 系列。" />*@
+
+    <title>虚拟机方案与报价|Azure </title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.azure.cn/Static/Favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="https://www.azure.cn/Static/Favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://www.azure.cn/Static/Favicon/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="https://www.azure.cn/Static/Favicon/manifest.json">
+    <link rel="mask-icon" href="https://www.azure.cn/Static/Favicon/safari-pinned-tab.svg" color="#00a3d9">
+    <meta name="msapplication-config" content="https://www.azure.cn/Static/Favicon/browserconfig.xml">
+    <!--<link href="http://www.51xuediannao.com/js/jquery/jquery_tanchu/styles/core.css" type="text/css" rel="stylesheet"/>-->
+    <meta name="theme-color" content="#ffffff">
+    <script type="appl">
+    </script>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <!-- BEGIN: Azure UI Style -->
+    <link href="https://www.azure.cn/Static/CSS/azureui.min.css?v=ae9a31c" rel="stylesheet">
+    <!-- END: Azure UI Style -->
+    <!-- BEGIN: Page Style -->
+    <link href="https://www.azure.cn/Static/CSS/common.min.css?v=ae9a31c" rel="stylesheet">
+    <!-- END: Page Style -->
+    <script type="text/javascript" src="~/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="~/js/popup_layer.js"></script>
+    <!-- BEGIN: Minified Page Style -->
+    <link href='https://www.azure.cn/Static/CSS/c38c583fcef0c5a47bb2e5ca7bdaeaf75141d4ce.css' rel='stylesheet' />
+    <!-- END: Minified Page Style -->
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-responsive.min.css" rel="stylesheet" />
+
+
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+
+    <link href="~/css/adminia.css" rel="stylesheet" />
+    <link href="~/css/adminia-responsive.css" rel="stylesheet" />
+
+    <link href="~/css/pages/dashboard.css" rel="stylesheet" />
+
+
+    <style type="text/css">
+        body, ul, li, div, h1, h2 {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .clr {
+            clear: both;
+            overflow: hidden;
+            height: 0;
+        }
+
+        a.closeBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: block;
+            width: 60px;
+            padding: 4px 0;
+            text-align: center;
+            background: #fff;
+            border: 1px solid #85B6E2;
+            color: #333;
+        }
+
+            a.closeBtn:hover {
+                color: #fff;
+                border: 1px solid #85B6E2;
+                background: #85B6E2;
+            }
+
+        body {
+            padding: 10px 20px 200px;
+        }
+
+        h1 {
+            color: #85B6E2;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .example {
+            border: 1px dashed #ccc;
+            padding: 40px;
+            margin-top: 10px;
+            zoom: 1;
+        }
+
+            .example .description {
+                color: #85B6E2;
+                float: left;
+                padding: 10px 20px 0 80px;
+                font-size: 20px;
+            }
+
+            .example .tigger {
+                display: block;
+                width: 80px;
+                padding: 10px;
+                text-align: center;
+                background: #fff;
+                border: 1px solid #999;
+                color: #333;
+                cursor: pointer;
+                float: left;
+            }
+
+            .example select {
+                margin-top: 10px;
+            }
+
+        .blk {
+            width: 700px;
+            height: 600px;
+            position: relative;
+        }
+
+            .blk .head, .blk .head-right, .blk .foot, .blk .foot-right {
+                background: url(../images/pop_up_bg.png);
+                overflow: hidden;
+                height: 4px;
+            }
+
+            .blk .head {
+                padding-left: 4px;
+            }
+
+            .blk .head-right {
+                background-position: right top;
+            }
+
+            .blk .foot {
+                padding-left: 4px;
+                background-position: left bottom;
+                _height: 3px;
+            }
+
+            .blk .foot-right {
+                background-position: right bottom;
+            }
+
+            .blk .main {
+                border-left: 2px solid #85B6E2;
+                border-right: 2px solid #85B6E2;
+                position: relative;
+                background: #fff;
+            }
+
+                .blk .main h2 {
+                    font: bold 16px "Microsoft YaHei";
+                    padding: 10px 20px 2px;
+                    color: #85B6E2;
+                }
+
+                .blk .main ul {
+                    padding: 20px;
+                    zoom: 1;
+                    font-size: 12px;
+                }
+
+                    .blk .main ul li {
+                        text-align: center;
+                        line-height: 30px;
+                        margin-bottom: 5px;
+                    }
+
+                        .blk .main ul li a {
+                            color: #333;
+                            display: block;
+                        }
+
+                            .blk .main ul li a:hover {
+                                background: #85B6E2;
+                                color: #fff;
+                                font-weight: bold;
+                                font-size: 14px;
+                            }
+
+
+        /* 自定义样式 */
+        .t5 .blk {
+            width: 700px;
+        }
+
+            .t5 .blk h2 {
+                color: #aaa;
+            }
+
+            .t5 .blk .main ul li a {
+                color: #aaa;
+            }
+
+            .t5 .blk .head, .t5 .blk .head-right, .t5 .blk .foot, .t5 .blk .foot-right {
+                background: url(~/images/pop_up_bg2.png);
+            }
+
+        /**/
+        * html .popup_iframe {
+            width: expression(this.previousSibling.style.width);
+            height: expression(this.previousSibling.style.height);
+        }
+
+
+        .main ul {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            border: 0;
+        }
+
+            .main ul li {
+                float: inherit;
+                margin: 0px 2px 0px 0px;
+                padding: 0px;
+                width: 120px;
+                height: 35px;
+                display: block;
+                border-radius: 0px;
+                box-shadow: #000 0px 0px 1px;
+                border: 0;
+                background-color: #F3F3F3;
+            }
+
+                /*.main ul li:hover ul {
+                    display: block;
+                }*/
+
+                .main ul li a {
+                    text-align: center;
+                    /*width: 100px;*/
+                    height: 37px;
+                    line-height: 35px;
+                    display: block;
+                    text-decoration: none;
+                    /*margin-bottom:20px;*/
+                }
+
+                .main ul li ul {
+                    display: none;
+                    position: relative;
+                    top: -37px;
+                    left: 121px;
+                }
+
+                    .main ul li ul li {
+                        margin: 0px 0px 2px 0px;
+                        padding: 0px;
+                        background-color: #FFFFFF;
+                    }
+
+        .sech {
+            background-color: pink;
+        }
+
+        .main ul li ul li:hover {
+            background: pink;
+        }
+
+        /*.main ul li ul li:hover ul {
+                visibility: visible;
+            }*/
+
+        .main ul li ul li ul {
+            /*visibility: hidden;*/
+            position: relative;
+            top: -37px;
+            left: 121px;
+        }
+
+            .main ul li ul li ul li {
+                background: #FFFFFF;
+            }
+
+                .main ul li ul li ul li:hover {
+                    background: #AFEEEE;
+                }
+
+        .thirdh {
+            background-color: #1E90FF;
+        }
+
+
+        .td {
+            border: solid #add9c0;
+            border-width: 0px 1px 1px 0px;
+            padding: 10px 0px;
+        }
+
+        .table {
+            border: solid #add9c0;
+            border-width: 1px 0px 0px 1px;
+        }
+    </style>
+</head>
+<body>
+    @using Qystem.Models
+    @{
+        List<WebSolution> VMF = ViewBag.VMF as List<WebSolution>;
+        List<WebSolution> VMStandardA = ViewBag.VMStandardA as List<WebSolution>;
+        List<WebSolution> VMAv2 = ViewBag.VMAv2 as List<WebSolution>;
+        List<WebSolution> VMStandardD = ViewBag.VMStandardD as List<WebSolution>;
+        List<WebSolution> VMStandardDv2 = ViewBag.VMStandardDv2 as List<WebSolution>;
+
+    }
+    <!-- BEGIN: HOME PAGE Content -->
+    <div class="content">
+        <div class="smartCampaignMain">
+            <div class="application-scenario container" style="width:95%">
+                <h1 style="margin:17px;">Azure虚拟机类型报价</h1>
+                <div class="col-md-4 website-scenario" style="width:320px;padding-right: inherit;padding-top: 6%;padding-left: inherit;">
+                    <div class="scenario-title">
+                        <div class="home-p">总计：</div>
+                    </div>
+
+                    <div class="website-outline" style="height:400px;width:280px">
+                        <img style="padding-left:9px;padding-top:3px;" usemap="#planetmap" src="~/img/VMram.png" />
+                        <!--<div class="image-box image1"></div>-->
+                        <map name="planetmap" id="planetmap">
+
+                            @*IE<area shape="circle" coords="44,125,27" onclick="openDilog(1)" alt="Venus" />*@
+                            @*IE<area shape="rect" coords="30,200,60,260" onclick="openDilog(2)" alt="Mercury" />*@
+                            @*<area shape="circle" coords="100,250,50" onclick="alert('ok')" alt="Venus" />*@
+                            <area shape="rect" coords="10,10,261,341" onclick="openDilog(4)" alt="VM" />
+                        </map>
+                    </div>
+                    <div id="eleVM" style="display:none" class="tigger">触发元素Web</div>
+                </div>
+                <div class="widget-content">
+                    <div class="widget-header">
+                        <i class="icon-th-list"></i>
+                        <h3>基于应用类型的虚拟机报价</h3>
+                        <i class="icon-th-list"></i>
+                        @*导出Excel<img src="~/img/excel.jpg" />
+                            导出Pdf<img src="~/img/PDF.jpg" />*@
+                    </div> <!-- /widget-header -->
+                    <table class="table table-striped table-bordered" style="width:74%;border-width:1px;margin-top:2%">
+                        <thead>
+                            <tr>
+                                <th style="width:9%" scope="col">产品名称</th>
+                                <th style="width:9%" scope="col">产品型号</th>
+                                <th style="width:16%" scope="col">产品配置</th>
+                                <th style="width:6%" scope="col">单位</th>
+                                <th style="width:6%" scope="col">数量</th>
+                                <th style="width:10%" scope="col">OSSA单价</th>
+                                <th style="width:10%" scope="col">CPP单价</th>
+                                <th style="width:9%" scope="col">OSSA/月</th>
+                                <th style="width:9%" scope="col">CPP/月</th>
+                                <th style="width:10%" scope="col">备注</th>
+                                <th style="width:8%" scope="col">删除</th>
+                            </tr>
+                        </thead>
+
+                        <tbody></tbody>
+                    </table>
+
+                </div>
+                <div class="row">
+
+                    <div class="span4">
+
+                        <div class="widget">
+
+                            <div class="widget-header">
+                                <button id="fea" style="width:100%" class="widget-header">产品型号的差异</button>
+                            </div> <!-- /widget-header -->
+
+                            <div id="feature" style="display:none" class="widget-content">
+                                <p>
+                                    <strong>虚拟机A标准系列</strong> A 系列标准级别支持需要负载平衡、自动缩放的应用程序。
+                                    <br /><strong>虚拟机Av2系列</strong>Av2 标准是最新一代的 A 系列 VM，具有类似的 CPU 性能但磁盘速度更快。内存更大。
+                                    <br /><strong>虚拟机D系列</strong>更快、更大且更好的 D 系列虚拟机，各方面的指标更强大，处理器速度更快、内存更大，提供基于 SSD 的存储所支持的临时磁盘。
+                                    <br /><strong>虚拟机Dv2系列</strong>Dv2 系列虚拟机在 D 系列虚拟机的基础上改进，可以提供更加强大的 CPU。
+                                    <br /><strong>虚拟机DS系列</strong>DS 系列虚拟机在 Dv2 系列虚拟机的基础上改进IO，可以提供全SSD与配合高级存储。
+                                </p>
+                            </div> <!-- /widget-content -->
+
+                        </div> <!-- /widget -->
+
+                    </div> <!-- /span5 -->
+
+                    <div class="span4">
+
+                        <div class="widget">
+
+                            <div class="widget-header">
+                                <button id="ad" style="width:100%" class="widget-header">VM虚机的优势</button>
+                            </div> <!-- /widget-header -->
+
+                            <div id="advantage" style="display:none" class="widget-content">
+                                <p>
+                                    1.Azure更性能更接近于物理机<strong>同配置</strong>，使用UnixBench工具跑分比其他厂商的VM高。
+                                    <br />2.Azure VM更<strong>安全</strong>基于网络层与系统层。
+                                    <br />3.<strong>高可用</strong>有SLA保障，可用性集群，灾难恢复。
+                                    <br />4.<strong>价格</strong>17年3月有大幅度调整，CPP更优惠。
+                                </p>
+                            </div> <!-- /widget-content -->
+
+                        </div> <!-- /widget -->
+                    </div> <!-- /span4 -->
+
+                    <div class="span4">
+
+                        <div class="widget">
+
+                            <div class="widget-header">
+                                <button id="ho" style="width:100%" class="widget-header">怎么卖这款产品？</button>
+                            </div> <!-- /widget-header -->
+
+                            <div id="howtosale" style="display:none" class="widget-content">
+                                <p>
+                                    1.客户IT资源紧张？IT运维复杂度高？
+                                    <br />2.客户应用服务系统的因特网访问大，本地带宽无法支撑？
+                                    <br />3.硬件设施老旧，没有冗余备份和高可用的设备？
+                                    <br />4.阶段性的对硬件需求扩展，需要一个灵活与弹性的系统和应用扩展。
+                                </p>
+                            </div> <!-- /widget-content -->
+
+                        </div> <!-- /widget -->
+
+                    </div> <!-- /span5 -->
+
+                </div>
+
+
+                <hr />
+                <div style="clear:both"></div>
+
+            </div>
+        </div>
+
+        @*//VM start*@
+
+        <div id="blkVM" class="blk" style="display:none;width:100%">
+            <div class="head"><div class="head-right"></div></div>
+            <div class="main">
+                <a href="javascript:void(0)" id="closeVM" class="closeBtn">关闭</a>
+                <ul>
+                    <li style="float:inherit;width: 151px;">
+                        <a style="display:inline" href="javascript:void(0)">F系列</a>
+                        <ul style="padding:6px;left:151px">
+                            @foreach (var t in VMF)
+                            {
+                                <li style="width:151px">
+                                    <a href="javascript:void(0) style=" display:inline"">@t.ProductType</a>
+                                    <ul style="padding:6px;left:151px">
+                                        <li style="width:500px;height:100%;">
+                                            <table border="0" style="text-align:center;background:inherit;width:100%" cellspacing="1" cellpadding="0">
+                                                <tr>
+                                                    <th style="width:15%;text-align:center">产品名称</th>
+                                                    <th style="width:10%;text-align:center">产品型号</th>
+                                                    <th style="width:10%;text-align:center">计量单位</th>
+                                                    <th style="width:10%;text-align:center">OSSA单价</th>
+                                                    <th style="width:15%;text-align:center">OSSA价格/月</th>
+                                                    <th style="width:10%;text-align:center;padding-right:10px">选择</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width:15%;text-align:center">@t.ProductName</td>
+                                                    <td style="width:10%;text-align:center">@t.ProductType</td>
+                                                    <td style="width:10%;text-align:center">@t.Number</td>
+                                                    <td style="width:10%;text-align:center">@(t.OSSAunitCost == null ? "" : Convert.ToDouble(t.OSSAunitCost).ToString("#0.00"))</td>
+                                                    <td style="width:15%;text-align:center">@t.OSSAMonthlyCost</td>
+                                                    <td td class="action-td" style="text-align:center;padding-right:10px">
+                                                        <a href="javascript:;" type="checkbox" attr-PrimaryKey="@t.PrimaryKey" attr-ProductName="@t.ProductName"
+                                                           attr-ProductType="@t.ProductType" attr-Configuration="@t.Configuration"
+                                                           attr-Unit="@t.Unit" attr-Number="@t.Number" attr-OSSAunitCost="@t.OSSAunitCost"
+                                                           attr-OSSPunitCost="@t.OSSPunitCost" attr-OSSAMonthlyCost="@t.OSSAMonthlyCost"
+                                                           attr-OSSPMonthlyCost="@t.OSSPMonthlyCost"
+                                                           attr-remark="@t.Remark"
+                                                           @*attr-type="store"*@
+                                                           onclick="saveWeb(this)" class="btn btn-small btn-warning">
+                                                            <i class="icon-ok"></i>
+                                                        </a>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            }
+                        </ul>
+
+                    </li>
+
+                </ul>
+            </div>
+            <div class="foot"><div class="foot-right"></div></div>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+    <!-- END: Documentation Content -->
+    <script>
+
+   var tVM = new PopupLayer({ trigger: "#eleVM", popupBlk: "#blkVM", closeBtn: "#closeVM", offsets: { x: 700, y: 300 } });
+
+
+
+
+        function openDilog(opentype) {
+            if (opentype == 1) {
+                $("#eleWeb").click();
+
+                var cusC = $("#blkWeb").parent(".popupLayer");
+                $(cusC).attr("style", $(cusC).attr("style") + ";width:900px;left:25%");
+
+                // $("#closeSql").click();
+                // $("#closeStore").click();
+
+                $("#blkSql").parent(".popupLayer").hide();
+                $("#blkStore").parent(".popupLayer").hide();
+                $("#blkVM").parent(".popupLayer").hide();
+                $("#blkRedis").parent(".popupLayer").hide();
+
+            }
+            else if (opentype == 2) {
+                $("#eleSql").click();
+
+                var cusS = $("#blkSql").parent(".popupLayer");
+                $(cusS).attr("style", $(cusS).attr("style") + ";width:900px;left:25%");
+                // $("#closeWeb").click();
+                //$("#closeStore").click();
+
+                $("#blkWeb").parent(".popupLayer").hide();
+                $("#blkStore").parent(".popupLayer").hide();
+                $("#blkVM").parent(".popupLayer").hide();
+                $("#blkRedis").parent(".popupLayer").hide();
+            }
+            else if (opentype == 3) {
+                $("#eleStore").click();
+                var cusS = $("#blkStore").parent(".popupLayer");
+                $(cusS).attr("style", $(cusS).attr("style") + ";width:900px;left:25%");
+                // $("#closeWeb").click();
+                //$("#closeSql").click();
+
+                $("#blkWeb").parent(".popupLayer").hide();
+                $("#blkSql").parent(".popupLayer").hide();
+                $("#blkVM").parent(".popupLayer").hide();
+                $("#blkRedis").parent(".popupLayer").hide();
+
+            }
+            else if (opentype == 4) {
+                $("#eleVM").click();
+                var cusS = $("#blkVM").parent(".popupLayer");
+                $(cusS).attr("style", $(cusS).attr("style") + ";width:900px;left:25%");
+                // $("#closeWeb").click();
+                //$("#closeSql").click();
+
+                $("#blkWeb").parent(".popupLayer").hide();
+                $("#blkSql").parent(".popupLayer").hide();
+                $("#blkStore").parent(".popupLayer").hide();
+                $("#blkRedis").parent(".popupLayer").hide();
+
+
+            }
+            else if (opentype == 5) {
+                $("#eleRedis").click();
+                var cusS = $("#blkRedis").parent(".popupLayer");
+                $(cusS).attr("style", $(cusS).attr("style") + ";width:900px;left:25%");
+                // $("#closeWeb").click();
+                //$("#closeSql").click();
+
+                $("#blkWeb").parent(".popupLayer").hide();
+                $("#blkSql").parent(".popupLayer").hide();
+                $("#blkStore").parent(".popupLayer").hide();
+                $("#blkVM").parent(".popupLayer").hide();
+
+
+            }
+            else $("#ele9").click();
+
+            //
+
+
+
+            //  $(".popupLayer").css("style", "width:900px");
+        }
+
+
+        function saveWeb(control) {
+
+            var PrimaryKey = $(control).attr("attr-PrimaryKey");
+            var ProductName = $(control).attr("attr-ProductName");
+            var ProductType = $(control).attr("attr-ProductType");
+            var Configuration = $(control).attr("attr-Configuration");
+            var Unit = $(control).attr("attr-Unit");
+            var Number = $(control).attr("attr-Number");
+            var OSSAunitCost = $(control).attr("attr-OSSAunitCost");
+            var OSSPunitCost = $(control).attr("attr-OSSPunitCost");
+            var OSSAMonthlyCost = $(control).attr("attr-OSSAMonthlyCost");
+            var OSSPMonthlyCost = $(control).attr("attr-OSSPMonthlyCost");
+            var remark = $(control).attr("attr-Remark");
+            var proType = $(control).attr("attr-type");
+
+
+            var isSelect = $(control).attr("checked") == "checked" ? true : false;
+            var isExist = false;
+
+            $(".table-bordered tr").each(function () {
+
+                var s = $(this).find("td:first").html();
+
+                if (s == PrimaryKey) {
+                    isExist = true;
+                    if (!isSelect) $(this).remove();
+                }
+
+            });
+
+            if (!isExist) {
+
+
+                //<table class="table table-striped " style="width:70%">
+                //        <thead>
+                //            <tr>
+                //                <th style="width:2%" scope="col">产品名称</th>
+                //                <th style="width:15%" scope="col">产品型号</th>
+                //                <th style="width:40%" scope="col">产品配置</th>
+                //                <th style="width:15%" scope="col">计量单位</th>
+                //                <th style="width:8%" scope="col">数量</th>
+                //                <th style="width:12%" scope="col">OSSA单价</th>
+                //                <th style="width:10%" scope="col">OSPA单价</th>
+                //                <th style="width:10%" scope="col">OSSA/月</th>
+                //                <th style="width:10%" scope="col">OSPA/月</th>
+                //                <th style="width:10%" scope="col">备注</th>
+                //            </tr>
+                //        </thead>
+
+                //        <tbody>
+
+                //        </tbody>
+                //    </table>
+
+
+                ////  <tr>
+                //                  <td>Michael</td>
+                //                  <td>Jordan</td>
+                //                  <td>mjordan</td>
+                //                  <td>Chicago Bulls</td>
+                //                  <td class="action-td">
+                //                      <a href="javascript:;" class="btn btn-small btn-warning">
+                //                          <i class="icon-ok"></i>
+                //                      </a>
+                //                      <a href="javascript:;" class="btn btn-small">
+                //                          <i class="icon-remove"></i>
+                //                      </a>
+                //                  </td>
+                //              </tr>
+
+                var innerhtml = "";
+                innerhtml += "<tr attr-id='" + PrimaryKey + "'>";
+                innerhtml += "  <td>" + ProductName + "</td>";
+                innerhtml += "  <td>" + ProductType + "</td>";
+                innerhtml += "  <td title=\"" + Configuration + "\">" + Configuration.substr(0, 29) + "<em style=\"color:red\">...</em></td>";
+                innerhtml += "  <td>" + Unit + "</td>";
+
+                if (proType == "store") {
+                    innerhtml += "  <td><input onchange='change(this)' type='text' style='width:100%' value='" + parseInt(Number) + "'></td>";
+                }
+                else innerhtml += "  <td>" + parseInt(Number) + "</td>";
+
+                innerhtml += "  <td>" + OSSAunitCost + "</td>";
+                innerhtml += "       <td>" + OSSPunitCost + "</td>";
+                innerhtml += "        <td>" + OSSAMonthlyCost + "</td>";
+                innerhtml += "       <td>" + OSSPMonthlyCost + "</td>";
+                innerhtml += "      <td>" + remark + "</td>";
+                innerhtml += " <td class=\"action-td\">";
+                innerhtml += "     <a href=\"javascript:void(0);\"  onclick=\"$(this).parents('tr').remove();comTotalPrice();\" class=\"btn btn-small\">";
+                innerhtml += "     <i class=\"icon-remove\"></i>";
+                innerhtml += "     </a>";
+                innerhtml += "  </td>";
+                innerhtml += "</tr>";
+                $(".table-bordered tbody").append(innerhtml);
+            }
+            comTotalPrice();
+        }
+
+
+        //计量单位计算
+        function change(control) {
+
+            var currentTr = $(control).parents("tr");
+
+            var ossaPrice = parseFloat($(currentTr).find("td:eq(5)").html());
+            var osspPrice = parseFloat($(currentTr).find("td:eq(6)").html());
+            var unit = parseInt($(control).val());
+
+
+
+            var ossaMonth = unit * ossaPrice;
+            var osspMonth = unit * osspPrice;
+
+            if (!isNaN(ossaMonth)) {
+                $(currentTr).find("td:eq(7)").html(ossaMonth);
+            }
+
+            if (!isNaN(osspMonth)) {
+                $(currentTr).find("td:eq(8)").html(osspMonth);
+            }
+
+            comTotalPrice();
+
+        }
+
+
+        function comTotalPrice() {
+            var price = 0.0;
+            $(".table-bordered").each(function () {
+
+                $(this).find("tr:gt(0)").each(function () {
+                    price += parseFloat($(this).find("td:eq(7)").html());
+
+                });
+
+            });
+
+            price = price.toFixed(2);
+            $(".home-p").html("总计：" + price);
+        }
+
+
+        // fadetoggle to div 说明部分
+        $(document).ready(function () {
+            $("#ho").click(function () {
+                //$("#div1").fadeToggle();
+                $("#howtosale").fadeToggle("slow");
+                //$("#div3").fadeToggle(3000);
+            });
+        });
+
+
+        $(document).ready(function () {
+            $("#fea").click(function () {
+                //$("#div1").fadeToggle();
+                $("#feature").fadeToggle("slow");
+                //$("#div3").fadeToggle(3000);
+            });
+        });
+
+        $(document).ready(function () {
+            $("#ad").click(function () {
+                //$("#div1").fadeToggle();
+                $("#advantage").fadeToggle("slow");
+                //$("#div3").fadeToggle(3000);
+            });
+        });
+
+        $(document).ready(function () {
+            $(".popupLayer>.blk>.main>ul>li").on("click", function (e) {
+                e.stopPropagation();
+                $(".popupLayer>.blk>.main>ul ul").hide();
+                $(this).children("ul").show();
+
+
+
+            }
+
+                );
+
+
+
+        });
+
+
+
+        $(document).ready(function () {
+            $(".popupLayer>.blk>.main>ul>li>ul>li").on("click", function (e) {
+                e.stopPropagation();
+                $(".popupLayer>.blk>.main>ul>li>ul>li ul").hide();
+                $(this).children("ul").show();
+
+
+
+            }
+
+                );
+
+
+
+        });
+
+        //BaiDu
+
+        var _hmt = _hmt || [];
+        (function baidu() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?5ccb0a1bf5dac60e254816e3aa5ce359";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="~/js/jquery-1.7.2.min.js"></script>
+    <script src="~/js/excanvas.min.js"></script>
+    <script src="~/js/jquery.flot.js"></script>
+    <script src="~/js/jquery.flot.pie.js"></script>
+    <script src="~/js/jquery.flot.orderBars.js"></script>
+    <script src="~/js/jquery.flot.resize.js"></script>
+
+    <script src="~/js/bootstrapTable.js"></script>
+    <script src="~/js/charts/bar.js"></script>
+
+</body>
+</html>

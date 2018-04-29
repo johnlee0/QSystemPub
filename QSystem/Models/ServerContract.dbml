@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QSystem" Class="ServerContractDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=iqyzxabrf9.database.chinacloudapi.cn;Initial Catalog=QSystem;User ID=liqiang123;Encrypt=False;TrustServerCertificate=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QSystemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.WebApp" Member="WebApp">
+    <Type Name="WebApp">
+      <Column Name="WebAppType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="WebName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PlanType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Scale" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Configuration" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OSSA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="monthly" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="开发注意" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[StorageBlob-Web]" Member="StorageBlob_Web">
+    <Type Name="StorageBlob_Web">
+      <Column Name="WebAppType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="WebStorageType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Storage" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="StorageType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="redundancyType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="range" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OSSA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="开发注意" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SqlServer" Member="SqlServer">
+    <Type Name="SqlServer">
+      <Column Name="WebAppType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SQLDB" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DTUOReDTU" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SqlServerLevel" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SqlServerType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="configuration" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[RestorePoint ]" Member="RestorePoint_" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="WhenBack" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OSSA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="monthly" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="开发注意" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Mysql" Member="Mysql">
+    <Type Name="Mysql">
+      <Column Name="WebAppType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MySqlType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="configuration" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[RestorePoint ]" Member="RestorePoint_" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OSSA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="monthly" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WebSolution" Member="WebSolution">
+    <Type Name="WebSolution">
+      <Column Name="PrimaryKey" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ProductType" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Configuration" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Number" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="OSSAunitCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="OSSPunitCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="OSSAMonthlyCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="OSSPMonthlyCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
