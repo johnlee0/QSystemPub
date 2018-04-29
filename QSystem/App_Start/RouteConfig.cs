@@ -11,6 +11,7 @@ namespace Qystem
     {
         //注册路由的静态方法（分配用户的请求地址，总机或前台接待室）
         //Gittest
+        //Gittest2
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");//忽略不需要处理的特定请求
